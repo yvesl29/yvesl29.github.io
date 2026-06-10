@@ -14,7 +14,7 @@ const legacyRedirects = Object.fromEntries(
 );
 
 export default defineConfig({
-  site: 'https://yvesl29.github.io',
+  site: 'https://hub.ondeinteractive.com',
   markdown: {
     processor: unified({
       smartypants: false,
