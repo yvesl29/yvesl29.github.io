@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Darts app icon">
+  <rect width="128" height="128" rx="18" fill="#101820" />
+  <circle cx="64" cy="64" r="42" fill="#f7f7f8" />
+  <circle cx="64" cy="64" r="34" fill="#d1242f" />
+  <circle cx="64" cy="64" r="25" fill="#f7f7f8" />
+  <circle cx="64" cy="64" r="16" fill="#1a7f37" />
+  <circle cx="64" cy="64" r="7" fill="#d1242f" />
+  <path d="M89 28 72 58l8 8 30-17-13-4-4-13z" fill="#7cc0ff" />
+  <path d="M72 58 49 81" stroke="#101820" stroke-width="7" stroke-linecap="round" />
+</svg>

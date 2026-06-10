@@ -1,0 +1,67 @@
+---
+import { apps, homeCopy, type Locale } from '../data/apps';
+import '../styles/custom.css';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = homeCopy[locale];
+const alternateLocale: Locale = locale === 'en' ? 'fr' : 'en';
+---
+
+<html lang={copy.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={copy.metaDescription} />
+    <link rel="canonical" href={`/${locale}/`} />
+    <link rel="alternate" hreflang="en" href="/en/" />
+    <link rel="alternate" hreflang="fr" href="/fr/" />
+    <link rel="alternate" hreflang="x-default" href="/" />
+    <title>{copy.heading}</title>
+  </head>
+  <body class="home-page">
+    <main class="home-shell">
+      <header class="home-header">
+        <div class="home-topline">
+          <p class="home-kicker">{copy.kicker}</p>
+          <nav class="home-language" aria-label={copy.languageLabel}>
+            <a href={`/${alternateLocale}/`}>{copy.alternateLanguageText}</a>
+          </nav>
+        </div>
+        <h1>{copy.heading}</h1>
+        <p>{copy.intro}</p>
+      </header>
+
+      <section class="app-list" aria-label={copy.appsLabel}>
+        {
+          apps.map((app) => (
+            <article class="app-card">
+              <img src={app.icon} alt="" class="app-icon" width="64" height="64" />
+              <div class="app-content">
+                <h2>{app.name[locale]}</h2>
+                <p>{app.description[locale]}</p>
+                <section class="legal-link-group" aria-labelledby={`${app.slug}-${locale}-links`}>
+                  <h3 id={`${app.slug}-${locale}-links`}>{copy.legalLinksHeading}</h3>
+                  <ul>
+                    {app.legalLinks.map((link) => (
+                      <li>
+                        <a href={link.href[locale]}>{link.label[locale]}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              </div>
+            </article>
+          ))
+        }
+      </section>
+    </main>
+
+    <footer class="home-footer">
+      <p>{copy.footer}</p>
+    </footer>
+  </body>
+</html>

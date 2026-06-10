@@ -1,0 +1,22 @@
+{
+  "name": "yvesl29-github-io",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/markdown-remark": "^7.2.0",
+    "@astrojs/starlight": "^0.40.0",
+    "astro": "^6.4.5",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "yaml": "^2.8.3"
+  }
+}

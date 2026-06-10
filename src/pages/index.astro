@@ -1,0 +1,37 @@
+---
+import '../styles/custom.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Mobile apps by Onde Interactive." />
+    <link rel="canonical" href="/" />
+    <link rel="alternate" hreflang="en" href="/en/" />
+    <link rel="alternate" hreflang="fr" href="/fr/" />
+    <link rel="alternate" hreflang="x-default" href="/" />
+    <title>Onde Interactive</title>
+    <script is:inline>
+      const languages = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || 'en'];
+      const locale = languages.some((language) => language.toLowerCase().startsWith('fr')) ? 'fr' : 'en';
+      location.replace(`/${locale}/`);
+    </script>
+  </head>
+  <body class="home-page home-redirect-page">
+    <main class="home-shell home-choice">
+      <header class="home-header">
+        <p class="home-kicker">Mobile apps</p>
+        <h1>Onde Interactive</h1>
+        <p>Choose your language.</p>
+      </header>
+
+      <nav class="language-choice" aria-label="Language">
+        <a href="/en/">English</a>
+        <a href="/fr/">Français</a>
+      </nav>
+    </main>
+  </body>
+</html>
