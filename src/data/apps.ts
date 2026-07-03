@@ -16,6 +16,11 @@ export const homeCopy = {
     legalLinksHeading: 'Legal documents',
     languageLabel: 'Language',
     alternateLanguageText: 'Voir en français',
+    storeHeading: 'Download',
+    iosBadgeTop: 'Download on the',
+    iosBadgeBottom: 'App Store',
+    androidBadgeTop: 'GET IT ON',
+    androidBadgeBottom: 'Google Play',
     footer: '© 2026 Yves Léon EI — Onde Interactive. All rights reserved.',
   },
   fr: {
@@ -28,6 +33,11 @@ export const homeCopy = {
     legalLinksHeading: 'Documents légaux',
     languageLabel: 'Langue',
     alternateLanguageText: 'View in English',
+    storeHeading: 'Télécharger',
+    iosBadgeTop: "Télécharger dans l'",
+    iosBadgeBottom: 'App Store',
+    androidBadgeTop: 'DISPONIBLE SUR',
+    androidBadgeBottom: 'Google Play',
     footer: '© 2026 Yves Léon EI — Onde Interactive. Tous droits réservés.',
   },
 } as const satisfies Record<Locale, Record<string, string>>;
@@ -35,10 +45,14 @@ export const homeCopy = {
 export const apps = [
   {
     slug: 'darts',
-    icon: '/darts-icon.svg',
+    icon: '/darts-icon.png',
     name: {
-      en: 'Darts',
-      fr: 'Darts',
+      en: 'Darts: Play & Track',
+      fr: 'Darts: Play & Track',
+    },
+    storeLinks: {
+      ios: 'https://apps.apple.com/us/app/darts-play-track/id6777970047',
+      android: 'https://play.google.com/store/apps/details?id=com.diaudes.darts',
     },
     description: {
       en: 'A darts scoring and practice tracker for solo players.',
